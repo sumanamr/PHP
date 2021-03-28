@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <script>
+            function doAdd()
+            {
+                var opr1= document.addForm.operand1.value;
+                var opr2=document.addForm.operand2.value;
+                alert('opr1 = ' + opr1);
+                alert('opr2 = ' + opr2);
+                var m=parseInt(opr1);
+                var n= parseInt(opr2);
+                var result = m+n;
+                alert('result = ' + result);
+                document.getElementById('result').innerHTML=result;
+            }
+            </script>
+    </head>
+    <body style="background-color: cyan; text-align: center">
+        <br>
+        <br>
+        <form name="addForm">
+            Operand 1:
+            <input type="text" name="operand1" size="5"/>
+            <br>
+            <br>
+            Operad 2:
+            <input type="text" name ="operand2" size="5"/>
+            <br>
+            <br>
+            <input type="button" value="Submit" onclick="return doAdd()" />
+            <br>
+            <br>
+            <h1><font color:'red'><div id='result'></div></font></h1>
+        </form>
+    </body>
+</html>

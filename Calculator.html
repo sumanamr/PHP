@@ -1,0 +1,81 @@
+<html>
+    <head>
+        <script>
+            function doCalculator(operator)
+            {
+                var n=document.calculatorForm.operator.length;
+                alert('No. of radio buttons = ' + n);
+                var flag=false;
+                var i;
+                for(i = 0;i < n;i++)
+                {
+                    if(document.calculatorForm.operator[i].checked)
+                    {
+                        flag=true;
+                        break;
+                    }
+                }
+                if(flag==false)
+                {
+                    alert('Choose an operator');
+                    return false;
+                }
+                operator=document.calculatorForm.opertor[i].value;
+                alert('operator = '+ operator);
+                var opr1=document.calculatorForm.operand1.value;
+                var opr2=document.calculatorForm.operand2.value;
+                alert('opr1 = ' + opr1);
+                alert('opr2 = ' + opr2);
+            
+                var p=parseInt(opr1);
+                var q= parseInt(opr2);
+            
+                var result;
+            
+                switch(operator)
+                {
+                    case '+':
+                        result=p+q;
+                        break;
+                    case '-':
+                        result = p-q;
+                        break;  
+                    case '*':
+                        result =p*q;
+                        break;
+                    case '/':
+                        result=p/q;
+                        break;          
+                }
+                alert('result = ' + result );
+                document.getElementById('result').innerHTML=result;
+            }
+        </script>
+    </head>
+    <body style="background-color: blanchedalmond; text-align: center">
+        <br>
+        <br>
+        <form name="calculatorForm">
+            Operand 1:
+            <input type="text" name="operand1" size="5" />
+            <br>
+            <br>
+            Operand 2:
+            <input type="text" name="operand2" size="5" />
+            <br>
+            <br>
+            Operation:
+            <input type="radio" name="operator" value="+"/>+
+            <input type="radio" name="operator" value="-"/>-
+            <input type="radio" name="operator" value="*"/>*
+            <input type="radio" name="operator" value="/"/>/
+            <br>
+            <br>
+            <input type="button" value="Submit" onclick="return doCalculator(document.calculatorForm.operator)"/>
+            <br>
+            <br>
+            <h1><font color= 'red'><div id='result'></div></font></h1>
+
+        </form>
+    </body>
+</html>
